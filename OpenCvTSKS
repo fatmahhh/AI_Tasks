@@ -1,0 +1,75 @@
+Task_1 : find 5 python libraries used in computer vision ?1
+
+1) OpenCv :
+  OpenCV is a popular and open-source computer vision library that is focussed on real-time applications.
+  The library has a modular structure and includes several hundreds of computer vision algorithms.
+  OpenCV includes a number of modules including image processing,
+  video analysis, 2D feature framework, object detection,
+  camera calibration, 3D reconstruction and more.
+  
+2) Keras :
+  This deep learning library provides several features, 
+  including support for both convolutional networks and recurrent networks, 
+  allowing easy and fast prototyping, among others.
+  
+3) Matplotlib :
+  Matplotlib is a comprehensive visualisation library for creating static,
+  animated and interactive visualisations in Python.
+  
+4) PyTorchCv :
+   The framework is a  collection of image classification, segmentation, detection, 
+   and pose estimation models. There are a number of implemented models in this framework,
+   including AlexNet, ResNet, ResNeXt, PyramidNet, SparseNet, DRN-C/DRN-D and more.  
+
+5) Scikit image :
+Scikit-Image is a popular and open-source Python library
+that includes a collection of algorithms for image processing.
+It is basically an image processing toolbox for SciPy.
+The library is built on scipy.
+ndimage to provide a versatile set of image processing routines in Python language.
+
+-------------------------------------------------------------------------------------------------
+
+
+Task_2 : How to read Videos With Sounds Using OpenCv?!
+
+import cv2
+import numpy as np
+#ffpyplayer for playing audio
+from ffpyplayer.player import MediaPlayer
+
+video_path="Path"
+def PlayVideo(video_path):
+    video=cv2.VideoCapture(video_path)
+    player = MediaPlayer(video_path)
+    while True:
+        grabbed, frame=video.read()
+        audio_frame, val = player.get_frame()
+        if not grabbed:
+            print("End of video")
+            break
+        if cv2.waitKey(28) & 0xFF == ord("q"):
+            break
+        cv2.imshow("Video", frame)
+        if val != 'eof' and audio_frame is not None:
+            #audio
+            img, t = audio_frame
+    video.release()
+    cv2.destroyAllWindows()
+PlayVideo(video_path)
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

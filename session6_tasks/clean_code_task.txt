@@ -1,0 +1,64 @@
+the conditions of code to be cleaned :
+ -Naming Conventions
+            # This is bad
+           # represents the number of active users
+               au = 55
+
+          # This is good
+              active_user_amount = 55
+
+ -Use nouns for variable names
+ - Use descriptive-revealing names
+         # This is bad
+           c = 5
+           d = 12
+
+         # This is good
+            city_counter = 5
+            elapsed_time_in_days = 12
+
+ -Avoid using ambiguous abbreviations
+         # This is bad
+             fna = 'Bob'
+             cre_tmstp = 1621535852
+
+         # This is good
+             first_name = 'Bob'
+             creation_timestamp = 1621535852
+ 
+ -Always use the same vocabulary
+       # This is bad
+            client_first_name = 'Bob'
+            customer_last_name = 'Smith'
+
+      # This is good
+           client_first_name = 'Bob'
+           client_last_name = 'Smith'
+ 
+-Use verbs for function names
+        
+ -Do not use different words for the same concept
+            # This is bad
+                def get_name(): pass
+                def fetch_age(): pass
+
+          # This is good
+               def get_name(): pass
+               def get_age(): pass
+
+ -Functions should only perform a single task
+        # This is bad
+             def fetch_and_display_personnel():
+               data = # ...
+
+               for person in data:
+                  print(person)
+
+       # This is good
+            def fetch_personnel():
+                return # ...
+
+            def display_personnel(data):
+               for person in data:
+                  print(person)
+ - Don't add noise comments
